@@ -3,13 +3,26 @@
 <head>
 	<title>test</title>
 	<link rel="stylesheet" type="text/css" href="../css/defalt.css">
+	<script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
+	<script type="text/javascript">
+		$(function () {
+			$('#bg').on('mouseover',function(){
+				$('.hover').show();
+			});
+			$('#bg').on('mouseout',function(){
+				$('.hover').hide();
+			});
+		});
+	</script>
 </head>
 <body>
 
 <div id="section">
-	<a href="../images/bg_01.jpg" download="bg_01">
+	<a id="bg" href="../images/bg_01.jpg" download="bg_01">
 		<img src="../images/bg_01.jpg" alt="bg_01">
+		<img class="hover" src="../images/bg_02_hover.jpg">
 	</a>
+
 </div>
 
 <style type="text/css">
@@ -23,15 +36,16 @@
 		display: inline-block;
 		width: 500px;
 		height: 500px;
-		margin-left: 75px;
+		margin-left: 500px;
 		border-bottom: 5px solid black;
 	}
 
-
-	a:hover{
-		background-image: url(../images/bg_02_hover.jpg);
-		border-bottom: 5px solid white;
+	.hover {
+		position: absolute;
+		top:50px;
 	}
+
+
 </style>
 
 </body>
